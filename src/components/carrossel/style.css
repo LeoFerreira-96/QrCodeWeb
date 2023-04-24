@@ -1,0 +1,60 @@
+.carrossel {
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+
+}
+
+.item {
+  border-radius: .5rem;
+  border: 1px solid #663399;
+  width: 20rem;
+  margin: 1rem;
+  padding: 3rem;
+  text-align: center;
+}
+
+.image {
+  margin: auto;
+  width: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+
+}
+
+.description {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.action {
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: .5rem;
+border: 1px solid #663399;
+}
+
+.action a{
+text-decoration: none;
+padding: 1rem;
+width: 100%;
+display: inline-block;
+border-radius: .25rem;
+}
+
+.action :hover{
+  width: 100%;
+  display: inline-block;
+  border-radius: .25rem;
+  background-color: #663399;
+  color: #fff;
+  }

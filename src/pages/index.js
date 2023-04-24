@@ -1,37 +1,40 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+import Layout from "../components/layout/index"
+import Seo from "./seo"
+import * as styles from "../css/index.module.css"
 
 const links = [
   {
     text: "The Universe",
     url: "https://",
+    img: { src: "../images/projects/universe.png", alt: "" },
     description: "Lorem ipsom",
   },
   {
     text: "Manager",
     url: "https://",
+    img: { src: "../images/projects/", alt: "" },
     description: "Lorem ipsom",
   },
   {
     text: "Landing Page",
     url: "https://",
+    img: { src: "../images/projects/landingpage.png", alt: "" },
     description: "Lorem ipsom",
   },
   {
     text: "Pokémon",
     url: "https://",
+    img: { src: "../images/projects/pokemon.png", alt: "" },
     description: "Lorem ipsom",
   },
 ]
 
 const pageLinks = [
-  { text: "Sobre mim", url: "page-2" },
-  { text: "Contato", url: "using-ssr" },
+  { text: "Sobre mim", url: "about" },
+  { text: "Contato", url: "contact" },
 ]
 
 const moreLinks = [
@@ -46,7 +49,7 @@ const moreLinks = [
   },
 ]
 
-const IndexPage = () => (
+const Home = () => (
   <Layout>
     <div className={styles.textCenter}>
       <h1>
@@ -63,27 +66,39 @@ const IndexPage = () => (
         Seja bem-vindo à <code>src/leonardo-ferreira/index.js</code>.
       </p>
     </div>
-    <h2>
+    <h2 className={styles.textCenter}>
       <b>Projetos</b>
     </h2>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a className={styles.listItemLink} href={link.url}>
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
+    <div className="carrossel">
+      {links.map((i, index) => (
+        <div className="item" key={index}>
+          <b>{i.text}</b>
+          <div className="image">
+            <img src={i.img.src} alt={i.img.alt} />
+          </div>
+          <div className="info">
+            <div className="description">
+              <p>{i.description}</p>
+            </div>
+            <div className="action">
+              <Link to={i.url}>
+                <b>Entrar</b>
+              </Link>
+            </div>
+          </div>
+        </div>
       ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={link.url}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
+    </div>
+    <div className={styles.textCenter}>
+      {moreLinks.map((link, i) => (
+        <React.Fragment key={link.url}>
+          <a href={link.url}>{link.text}</a>
+          {i !== moreLinks.length - 1 && <> · </>}
+        </React.Fragment>
+      ))}
+    </div>
   </Layout>
 )
-export const Head = () => <Seo title="Home" />
+export const Head = () => <Seo title="Inicio" />
 
-export default IndexPage
+export default Home
