@@ -3,31 +3,27 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { StaticImage } from "gatsby-plugin-image"
+import * as styles from "../components/index.module.css"
 
-const UsingSSR = ({ serverData }) => {
+const UsingSSR = () => {
   return (
     <Layout>
-      <h1>
-        This page is <b>rendered server-side</b>
-      </h1>
-      <p>
-        This page is rendered server side every time the page is requested.
-        Reload it to see a(nother) random photo from{" "}
-        <code>dog.ceo/api/breed/shiba/images/random</code>:
-      </p>
-      <img
-        style={{ width: "320px", borderRadius: "var(--border-radius)" }}
-        alt="A random dog"
-        src={serverData.message}
+      <div className={styles.textCenter}>
+        <h1>
+          <b>Contato</b>
+        </h1>
+      </div>
+      <StaticImage
+        src="../images/example.png"
+        loading="eager"
+        width={64}
+        quality={95}
+        formats={["auto", "webp", "avif"]}
+        alt=""
+        style={{ marginBottom: `var(--space-3)` }}
       />
-      <p>
-        To learn more, head over to our{" "}
-        <a href="https://www.gatsbyjs.com/docs/reference/rendering-options/server-side-rendering/">
-          documentation about Server Side Rendering
-        </a>
-        .
-      </p>
-      <Link to="/">Go back to the homepage</Link>
+      <Link to="/">De volta ao Inicio</Link>
     </Layout>
   )
 }
