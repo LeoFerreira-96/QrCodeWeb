@@ -9,32 +9,33 @@ const links = [
   {
     text: "The Universe",
     url: "https://",
-    img: { src: "../images/projects/universe.png", alt: "" },
+    img: { src: "../images/projects/universe.png", alt: "Teste" },
     description: "Lorem ipsom",
   },
   {
     text: "Manager",
     url: "https://",
-    img: { src: "../images/projects/", alt: "" },
+    img: { src: "../images/projects/", alt: "Teste" },
     description: "Lorem ipsom",
   },
   {
     text: "Landing Page",
     url: "https://",
-    img: { src: "../images/projects/landingpage.png", alt: "" },
+    img: { src: "../images/projects/landingpage.png", alt: "Teste" },
     description: "Lorem ipsom",
   },
   {
     text: "Pokémon",
     url: "https://",
-    img: { src: "../images/projects/pokemon.png", alt: "" },
+    img: { src: "../images/projects/pokemon.png", alt: "Teste" },
     description: "Lorem ipsom",
   },
 ]
 
 const pageLinks = [
-  { text: "Sobre mim", url: "about" },
-  { text: "Contato", url: "contact" },
+  { text: "Projetos", url: "/" },
+  { text: "Sobre mim", url: "/about" },
+  { text: "Contato", url: "/contact" },
 ]
 
 const moreLinks = [
@@ -62,8 +63,6 @@ const Home = () => (
             {i !== pageLinks.length - 1 && <> · </>}
           </React.Fragment>
         ))}
-        <br />
-        Seja bem-vindo à <code>src/leonardo-ferreira/index.js</code>.
       </p>
     </div>
     <h2 className={styles.textCenter}>
