@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "../components/index.module.css"
+import Carrossel from "../components/carrossel"
 
 const UsingSSR = () => {
   return (
@@ -14,15 +15,7 @@ const UsingSSR = () => {
           <b>Contato</b>
         </h1>
       </div>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
+      <Carrossel />
       <Link to="/">De volta ao Inicio</Link>
     </Layout>
   )
