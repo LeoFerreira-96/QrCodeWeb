@@ -9,25 +9,37 @@ const links = [
   {
     text: "The Universe",
     url: "https://",
-    img: { src: "../images/projects/universe.png", alt: "Teste" },
+    img: {
+      src: require("../images/projects/universe.png").default,
+      alt: "Teste",
+    },
     description: "Lorem ipsom",
   },
   {
     text: "Manager",
     url: "https://",
-    img: { src: "../images/projects/", alt: "Teste" },
+    img: {
+      src: require("../images/projects/notimage.png").default,
+      alt: "Teste",
+    },
     description: "Lorem ipsom",
   },
   {
     text: "Landing Page",
     url: "https://",
-    img: { src: "../images/projects/landingpage.png", alt: "Teste" },
+    img: {
+      src: require("../images/projects/landingpage.png").default,
+      alt: "Teste",
+    },
     description: "Lorem ipsom",
   },
   {
     text: "Pokémon",
     url: "https://",
-    img: { src: "../images/projects/pokemon.png", alt: "Teste" },
+    img: {
+      src: require("../images/projects/pokemon.png").default,
+      alt: "Teste",
+    },
     description: "Lorem ipsom",
   },
 ]
@@ -73,7 +85,7 @@ const Home = () => (
         <div className="item" key={index}>
           <b>{i.text}</b>
           <div className="image">
-            <img src={i.img.src} alt={i.img.alt} />
+            <img src={i.img.src} alt={i.img.alt} height="150px" />
           </div>
           <div className="info">
             <div className="description">
